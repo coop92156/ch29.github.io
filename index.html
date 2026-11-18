@@ -29,6 +29,40 @@
 </head>
 
 <body>
+  <!-- MADE BY SPLASH SCREEN -->
+  <div id="made-by-screen" style="
+    position: fixed;
+    inset: 0;
+    background-color: #202020;
+    color: #dcddde;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2147483647;
+    font-family: 'Flexi IBM VGA True', monospace, sans-serif;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+  " onclick="dismissCredit()">
+    <img src="imgs/icon-256-256.png" alt="Logo" style="width: 96px; height: 96px; margin-bottom: 20px; border-radius: 16px;" />
+    <h1 style="font-size: 2.5rem; margin: 0 0 10px 0; letter-spacing: 1px;">Made by Cooper Hartman</h1>
+    <p style="font-size: 1.1rem; color: #999999; margin: 0 0 25px 0;">Hosted on ch29.github.io</p>
+    <span style="font-size: 0.85rem; color: #666666;">(Click anywhere to skip)</span>
+  </div>
+
+  <script>
+    function dismissCredit() {
+      const screen = document.getElementById('made-by-screen');
+      if (!screen || screen.dataset.closing) return;
+      screen.dataset.closing = 'true';
+      screen.style.opacity = '0';
+      setTimeout(() => screen.remove(), 500);
+    }
+    setTimeout(dismissCredit, 2500);
+  </script>
+  <!-- END MADE BY SPLASH SCREEN -->
+
   <noscript>
     <p id="noscript-text">This site requires you to be able to run JavaScript.</p>
   </noscript>
